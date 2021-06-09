@@ -1,0 +1,82 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+-- Database: `productreview`
+--
+CREATE DATABASE IF NOT EXISTS `productreview` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `productreview`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins_products`
+--
+
+CREATE TABLE IF NOT EXISTS `admins_products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `weight` int(11) NOT NULL,
+  `color` varchar(200) NOT NULL,
+  `price` varchar(200) NOT NULL,
+  `category` varchar(200) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `description` varchar(400) NOT NULL,
+  `images` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=503 ;
+
+--
+-- Dumping data for table `admins_products`
+--
+
+INSERT INTO `admins_products` (`id`, `name`, `weight`, `color`, `price`, `category`, `stock`, `description`, `images`) VALUES
+(1, 'Samsung', 300, 'Blue', '125', 'Electronics', 8, 'It is good', '1.jpg'),
+(2, 'sony', 503, 'White', '125056', 'Electronics', 1, 'it is very good condition to use', '2.jpg'),
+(3, 'vivo', 288, 'Golden', '12543', 'Electronics', 8, 'It is best camera phone', '3.jpg'),
+(4, 'Xiomi', 500, 'White', '125', 'Electronics', 15, 'The product quality is high. It will work for long time in space', '4.jpg'),
+(5, 'Lenovo', 300, 'green', '7000', 'Electronics', 8, 'It is good', '5.jpeg'),
+(6, 'Nokia', 503, 'yellow', '30000', 'Electronics', 3, 'it is very good condition to use', '6.jpg'),
+(7, 'Samsung', 288, 'Blue', '35000', 'Electronics', 3, 'It is best camera phone', '7.jpg'),
+(8, 'Xolo', 500, 'White', '40000', 'Electronics', 13, 'The product quality is high. It will work for long time in space', '1.jpg'),
+(9, 'Htc', 300, 'Golden', '70000', 'Electronics', 24, 'It is good', '2.jpg'),
+(10, 'Hp', 503, 'White', '50000', 'Electronics', 12, 'it is very good condition to use', '3.jpg'),
+(11, 'Sony', 288, 'green', '7000', 'Electronics', 12, 'It is best camera phone', '4.jpg'),
+(12, 'Toshiba', 500, 'yellow', '6000', 'Electronics', 24, 'The product quality is high. It will work for long time in space', '5.jpeg'),
+(13, 'Apple', 300, 'Blue', '8000', 'Electronics', 48, 'It is good', '6.jpg'),
+(14, 'Dell', 503, 'White', '7000', 'Electronics', 24, 'it is very good condition to use', '7.jpg'),
+(15, 'Videocon', 288, 'Golden', '10000', 'Electronics', 18, 'It is best camera phone', '1.jpg'),
+(16, 'Panasonic', 500, 'White', '20000', 'Electronics', 24, 'The product quality is high. It will work for long time in space', '2.jpg'),
+(17, 'Lg', 300, 'green', '25000', 'Electronics', 24, 'It is good', '3.jpg'),
+(18, 'Whirlpool', 503, 'yellow', '30000', 'Electronics', 24, 'it is very good condition to use', '4.jpg'),
+(19, 'Samsung', 288, 'Blue', '40000', 'Electronics', 24, 'It is best camera phone', '5.jpeg'),
+(20, 'Godrej', 500, 'White', '50000', 'Electronics', 20, 'The product quality is high. It will work for long time in space', '6.jpg'),
+(21, 'Whirpool', 300, 'Golden', '50000', 'Electronics', 24, 'It is good', '7.jpg'),
+(22, 'Lg', 503, 'White', '30000', 'Electronics', 24, 'it is very good condition to use', '1.jpg'),
+(23, 'Videocon', 288, 'green', '60000', 'Electronics', 12, 'It is best camera phone', '2.jpg'),
+(24, 'Panasonic', 500, 'yellow', '30000', 'Electronics', 24, 'The product quality is high. It will work for long time in space', '3.jpg'),
+(25, 'Dell', 300, 'Blue', '50000', 'Electronics', 24, 'It is good', '4.jpg'),
+(26, 'Hp', 503, 'White', '60000', 'Electronics', 36, 'it is very good condition to use', '5.jpeg'),
+(27, 'Apple', 288, 'Golden', '40000', 'Electronics', 3, 'It is best camera phone', '6.jpg'),
+(28, 'Samsung', 500, 'White', '50000', 'Electronics', 20, 'The product quality is high. It will work for long time in space', '7.jpg'),
+(29, 'Sony', 300, 'green', '40000', 'Electronics', 6, 'It is good', '1.jpg'),
+(30, 'Acer', 503, 'yellow', '30000', 'Electronics', 6, 'it is very good condition to use', '2.jpg'),
+(31, 'Adcom', 288, 'Blue', '10000', 'Electronics', 3, 'It is best camera phone', '3.jpg'),
+(32, 'Htc', 500, 'White', '30000', 'Electronics', 3, 'The product quality is high. It will work for long time in space', '4.jpg'),
+(33, 'Lg', 300, 'Golden', '30000', 'Electronics', 3, 'It is good', '5.jpeg'),
+(34, 'Samsung', 503, 'White', '25000', 'Electronics', 10, 'it is very good condition to use', '6.jpg'),
+(35, 'Panasonic', 288, 'green', '20000', 'Electronics', 24, 'It is best camera phone', '7.jpg'),
+(36, 'Kingstar', 500, 'yellow', '10000', 'Electronics', 12, 'The product quality is high. It will work for long time in space', '7.jpg'),
+(37, 'Onida', 300, 'Blue', '15000', 'Electronics', 12, 'It is good', '1.jpg'),
+(38, 'Godrej', 503, 'White', '20000', 'Electronics', 24, 'it is very good condition to use', '2.jpg'),
+(39, 'Hitachi', 288, 'Golden', '18000', 'Electronics', 48, 'It is best camera phone', '3.jpg'),
+(40, 'Sony', 500, 'White', '20000', 'Electronics', 24, 'The product quality is high. It will work for long time in space', '4.jpg'),
+(41, 'Philips', 300, 'green', '25000', 'Electronics', 18, 'It is good', '5.jpeg'),
+(42, 'Samsung', 503, 'yellow', '30000', 'Electronics', 24, 'it is very good condition to use', '6.jpg'),
+(43, 'Panasonic', 288, 'Blue', '2000', 'Electronics', 24, 'It is best camera phone', '7.jpg'),
+(44, 'Lg', 500, 'White', '3000', 'Electronics', 24, 'The product quality is high. It will work for long time in space', '1.jpg'),
+(45, 'Toshiba', 300, 'Golden', '4000', 'Electronics', 24, 'It is good', '2.jpg'),
+(46, 'Onida', 503, 'White', '5000', 'Electronics', 20, 'it is very good condition to use', '3.jpg'),
+(47, 'Samsung', 288, 'green', '1500', 'Electronics', 24, 'It is best camera phone', '4.jpg'),
+(48, 'Kodak', 500, 'yellow', '2500', 'Electronics', 24, 'The product quality is high. It will work for long time in space', '5.jpeg'),
+(49, 'Canon', 300, 'Blue', '2300', 'Electronics', 12, 'It is best camera phone', '6.jpg'),
+(50, 'Nikon', 503, 'White', '5000', 'Electronics', 24, 'The product quality is high. It will work for long time in space', '1.jpg'),

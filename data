@@ -1,0 +1,29 @@
+import re
+from sensitive_data import dataset,feature_set,no_of_items
+
+# To calculate the basic probability of a word for a category
+def calc_prob(word,category):
+
+	if word not in feature_set or word not in dataset[category]:
+		return 0
+
+	return float(dataset[category][word])/no_of_items[category]
+
+
+# Weighted probability of a word for a category
+def weighted_prob(word,category):
+	# basic probability of a word - calculated by calc_prob
+	basic_prob=calc_prob(word,category)
+
+	# total_no_of_appearances - in all the categories
+	if word in feature_set:
+		tot=sum(feature_set[word].values())
+	else:
+		tot=0
+		
+	# Weighted probability is given by the formula
+	# (weight*assumedprobability + total_no_of_appearances*basic_probability)/(total_no_of_appearances+weight)
+	# weight by default is taken as 1.0
+	# assumed probability is 0.5 here
+	weight_prob=((1.0*0.5)+(tot*basic_prob))/(1.0+tot)
+	return weight_prob

@@ -1,0 +1,42 @@
+from django.shortcuts import render, redirect, render_to_response, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
+from .forms import SignUpForm,OrderForm,RatingsForm
+from admins.models import Products
+from .models import Orders, Ratings
+from .sensitive1 import naive_bayes
+from django.db.models import Count,Avg
+
+@login_required(login_url='users:login')
+def home(request):
+    prod=Products.objects.all()
+    form = OrderForm(request.POST)
+    if 'addcart' in request.POST:
+        if form.is_valid():
+            frm = form.save(commit=False)
+            frm.user = request.user
+            pr = request.POST.get("idu")
+            prd = get_object_or_404(Products,id=pr)
+            frm.prod = prd
+            prd.stock=prd.stock-frm.prodqty
+            prd.save(update_fields=["stock"])
+            frm.save()
+            return redirect('users:home')
+        else:
+            form = OrderForm(request.POST)
+    elif 'vieratg' in request.POST:
+        return redirect('users:home')
+        
+    return render(request, 'home.html',{'prod':prod,'form':form})
+
+def registration(request):
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()  # load the profile instance created by the signal
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=raw_password)
+            return redirect('users:login')
+        return render(request, 'signup.html', {'form': form})
+    

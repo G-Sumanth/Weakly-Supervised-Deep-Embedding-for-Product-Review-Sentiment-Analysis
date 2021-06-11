@@ -1,0 +1,30 @@
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import ProductForm
+from .models import Products
+from user.models import Orders,Ratings
+from django.db.models import Count,Avg
+
+def logins(request):
+    context=""
+    if request.method=="POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        if username == 'admin' and password == 'admin':
+            return redirect('admins:home')
+        else:
+            context = "username and password wrong"
+    return render(request, 'admins/login.html',{'context':context})
+
+
+    
+def uploadProduct(request):
+    form = ProductForm(request.POST or None, request.FILES)
+    if form.is_valid():
+        book = form.save()
+        return redirect('admins:home')
+    return render(request, 'admins/uploadProduct.html', {'form':form})
+    
+def viewratings(request):
+    ratings=Ratings.objects.all()
+    return render(request, 'admins/viewratings.html',{'ratings':ratings})
+    

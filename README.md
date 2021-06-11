@@ -1,4 +1,15 @@
 # Weakly-Supervised-Deep-Embedding-for-Product-Review-Sentiment-Analysis
+
+Project Name - Weakly Supervised Deep Embedding for Product Review Sentiment Analysis
+
+By- G. Sai Kiran, V. Shiva Kumar, G. Sumanth Kumar, N. Sudheer Department of Computer Science and Engineering IV Year
+B.Tech Students at CMR Technical Campus, Medchal.
+
+
+Under the Guidence of - Dr. Suwarna Gothane Associate Professor, 
+Department of Computer Science and Engineering, CMR Technical Campus.
+
+
 Now-a-days product reviews are becoming more valuable for the upcoming buyers to help them to make their right decisions
 to take the products in E- commerce websites. Recently, the Deep learning playing a major role in solving the problem
 related to sentiment classification. A neural network will be useful to represent automatically without human efforts.
